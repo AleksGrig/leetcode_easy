@@ -19,7 +19,7 @@ def solution1():
         target_index = d.get(target - num)
         d[num] = index
         if target_index != None:
-            return (index, target_index)
+            return (index, target_index) if index < target_index else (target_index, index)
 
 
 def solution2():
