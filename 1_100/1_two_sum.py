@@ -9,15 +9,16 @@
 # You can return the answer in any order.
 
 
-nums = [3, 3, 3]
-target = 6
+nums = [3, 3, 3, 4]
+target = 7
 d = {}
 
 
 def solution1():
     for index, num in enumerate(nums):
         target_index = d.get(target - num)
-        d[num] = index
+        if d.get(num) == None:
+            d[num] = index
         if target_index != None:
             return (index, target_index) if index < target_index else (target_index, index)
 
